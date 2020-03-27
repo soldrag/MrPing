@@ -13,12 +13,11 @@ def run_server(host: str, port: int):
 
         def data_received(self, data: bytes) -> None:
             resp = data.decode()
-            self.transport.write(b"hello")
-
+            print(resp)
+            #self.transport.write(b"hello")
 
     def resonse_handler(data):
         data.decode()
-        
 
     loop = asyncio.get_event_loop()
     coro = loop.create_server(ClientServerProtocol, str(host), port)
